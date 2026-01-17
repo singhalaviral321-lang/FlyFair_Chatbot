@@ -1,0 +1,45 @@
+# ===== OS & Editor Noise =====
+.DS_Store
+Thumbs.db
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+
+# ===== Virtual Environments =====
+venv/
+.env
+.env.*
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+.cursor/
+
+# ===== Large Source Artifacts (DO NOT COMMIT) =====
+raw_pdf/
+raw_pdf/**/*.pdf
+
+# ===== Temporary & Generated Files =====
+extracted_text/
+cleaned_text/
+
+# ===== Local Embeddings / Vector Stores =====
+*.faiss
+*.index
+*.bin
+chroma/
+vectorstore/
+
+# ===== Cache / Temp =====
+.cache/
+.tmp/
+temp/
+
+# ===== System =====
+*.swp
+*.swo
