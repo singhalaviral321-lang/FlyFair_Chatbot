@@ -33,59 +33,69 @@ class RAGService:
         self._build_index()
     
     def _load_chunks(self):
-        """Load chunks from JSON file"""
-        with open(self.chunks_path, 'r', encoding='utf-8') as f:
+        """Load chunks from JSON file using absolute path"""
+        chunks_path = os.path.abspath(self.chunks_path)
+
+        if not os.path.exists(chunks_path):
+            raise FileNotFoundError(f"RAG chunks file not found at: {chunks_path}")
+
+        with open(chunks_path, "r", encoding="utf-8") as f:
             self.chunks = json.load(f)
-        print(f"Loaded {len(self.chunks)} chunks from {self.chunks_path}")
+
+        print(f"Loaded {len(self.chunks)} chunks from {chunks_path}")
+
     
     def _build_index(self):
-        """Build FAISS index from chunk embeddings"""
-        # Extract text from chunks
-        texts = [chunk['text'] for chunk in self.chunks]
-        
-        # Generate embeddings
-        self.embeddings = self.model.encode(texts, show_progress_bar=True)
-        
-        # Create FAISS index
+        """
+        Build FAISS index using search-optimized representations
+        """
+        texts = []
+
+        for chunk in self.chunks:
+            meta = chunk.get("metadata", {})
+            searchable_text = f"""
+            Category: {meta.get('category', '')}
+            Scenario: {chunk.get('chunk_id', '')}
+            Rule: {chunk.get('text', '')}
+            """.strip()
+
+            texts.append(searchable_text)
+
+        self.embeddings = self.model.encode(
+            texts,
+            show_progress_bar=True,
+            normalize_embeddings=True
+        )
+
         dimension = self.embeddings.shape[1]
-        self.index = faiss.IndexFlatL2(dimension)
-        
-        # Normalize embeddings for cosine similarity
-        faiss.normalize_L2(self.embeddings)
-        self.index.add(self.embeddings.astype('float32'))
-        
+        self.index = faiss.IndexFlatIP(dimension)  # 🔑 USE COSINE DIRECTLY
+        self.index.add(self.embeddings.astype("float32"))
+
         print(f"Built FAISS index with {self.index.ntotal} vectors")
-    
-    def retrieve(self, query: str, top_k: int = 3, threshold: float = 0.5) -> List[Dict]:
-        """
-        Retrieve top-k relevant chunks for a query.
-        
-        Args:
-            query: User query
-            top_k: Number of chunks to retrieve
-            threshold: Minimum similarity threshold (0-1)
-        
-        Returns:
-            List of relevant chunks with similarity scores
-        """
-        # Encode query
-        query_embedding = self.model.encode([query])
-        faiss.normalize_L2(query_embedding)
-        
-        # Search
+
+
+
+
+
+    def retrieve(self, query: str, top_k: int = 5) -> List[Dict]:
+        query_embedding = self.model.encode(
+            [query],
+            normalize_embeddings=True
+        )
+
         k = min(top_k, len(self.chunks))
-        distances, indices = self.index.search(query_embedding.astype('float32'), k)
-        
-        # Convert L2 distances on normalized vectors to cosine similarity.
-        # For unit-normalized vectors: ||a-b||^2 = 2 - 2*cos(a,b)  =>  cos = 1 - dist/2
-        similarities = 1 - (distances[0] / 2.0)
-        
-        # Filter by threshold and return chunks
+        scores, indices = self.index.search(
+            query_embedding.astype("float32"),
+            k
+        )
+
         results = []
-        for i, (idx, sim) in enumerate(zip(indices[0], similarities)):
-            if sim >= threshold:
-                chunk = self.chunks[idx].copy()
-                chunk['similarity'] = float(sim)
-                results.append(chunk)
-        
+        for idx, score in zip(indices[0], scores[0]):
+            chunk = self.chunks[idx].copy()
+            chunk["similarity"] = float(score)
+            results.append(chunk)
+
         return results
+
+
+    

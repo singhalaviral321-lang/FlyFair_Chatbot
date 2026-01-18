@@ -25,9 +25,10 @@ export default function ChatInterface({ initialQuery = '', onBack }: ChatInterfa
 
   useEffect(() => {
     if (initialQuery) {
-      handleSend(initialQuery)
+      setInput(initialQuery)
     }
-  }, [])
+  }, [initialQuery])
+  
 
   useEffect(() => {
     scrollToBottom()
