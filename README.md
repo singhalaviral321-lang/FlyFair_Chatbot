@@ -4,6 +4,26 @@
 
 FlyFair is a facts-only, RAG-based chatbot that helps Indian domestic air passengers (18+) understand their legal rights when airlines delay, cancel, or otherwise disrupt flights.
 
+
+## 🇮🇳 Scope & Authority
+
+- **Jurisdiction:** India only  
+- **Flights Covered:** Domestic flights within India  
+- **Legal Source:** DGCA Passenger Charter (Government of India)
+
+> FlyFair does **not** use external knowledge, airline policies, or legal advice.  
+> If a right is not defined in the DGCA Passenger Charter, FlyFair will not answer.
+
+## 🧠 How FlyFair Works (High Level)
+
+FlyFair uses a **Retrieval-Augmented Generation (RAG)** pipeline with **strict guardrails**:
+
+1. Passenger rights are pre-extracted from the DGCA Passenger Charter
+2. Each rule is stored as a **self-contained legal chunk**
+3. User queries retrieve only the most relevant chunks
+4. Responses are generated **only from retrieved text**
+5. If nothing matches confidently → FlyFair responds: This is out of my Scope.
+
 ## 🎯 Features
 
 - **Facts-only answers** from DGCA Passenger Charter
@@ -15,131 +35,35 @@ FlyFair is a facts-only, RAG-based chatbot that helps Indian domestic air passen
 ## 🏗️ Architecture
 
 ### Backend
-- **FastAPI** - Python web framework
-- **sentence-transformers** - Embeddings (all-MiniLM-L6-v2)
-- **FAISS** - Vector store for similarity search
-- **Ollama/LM Studio** - Local LLM for response formatting (optional)
+- **Python**
+- **FastAPI**
+- **sentence-transformers** (embeddings)
+- **FAISS** (local vector store)
+- **RAG-only mode** (LLM optional, disabled by default)
 
 ### Frontend
-- **Next.js 14** - React framework
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
-- **Mobile-first** responsive design
+- **Next.js (App Router)**
+- **React**
+- **Tailwind CSS**
+- Mobile-first, no authentication, no chat history
 
-## 📋 Prerequisites
 
-- Python 3.8+
-- Node.js 18+
-- (Optional) Ollama or LM Studio for LLM formatting
-
-## 🚀 Setup
-
-### Backend Setup
-
-1. **Navigate to backend directory:**
-   ```bash
-   cd backend
-   ```
-
-2. **Create virtual environment:**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set environment variables (optional):**
-   ```bash
-   export LLM_PROVIDER=ollama  # or "lm_studio"
-   export LLM_BASE_URL=http://localhost:11434
-   export LLM_MODEL=llama2
-   ```
-
-5. **Run the backend:**
-   ```bash
-   python main.py
-   # Or with uvicorn directly:
-   uvicorn main:app --reload --host 0.0.0.0 --port 8000
-   ```
-
-   The API will be available at `http://localhost:8000`
-
-### Frontend Setup
-
-1. **Navigate to frontend directory:**
-   ```bash
-   cd frontend
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Create environment file:**
-   ```bash
-   cp .env.local.example .env.local
-   # Edit .env.local and set NEXT_PUBLIC_API_URL=http://localhost:8000
-   ```
-
-4. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-
-   The app will be available at `http://localhost:3000`
-
-## 🔧 Configuration
-
-### LLM Setup (Optional)
-
-FlyFair works without an LLM (using direct formatting), but LLM formatting provides better responses.
-
-#### Option 1: Ollama
-
-1. **Install Ollama:**
-   - Visit https://ollama.ai
-   - Download and install
-
-2. **Pull a model:**
-   ```bash
-   ollama pull llama2
-   # or
-   ollama pull mistral
-   ```
-
-3. **Set environment variables:**
-   ```bash
-   export LLM_PROVIDER=ollama
-   export LLM_BASE_URL=http://localhost:11434
-   export LLM_MODEL=llama2
-   ```
-
-#### Option 2: LM Studio
-
-1. **Install LM Studio:**
-   - Visit https://lmstudio.ai
-   - Download and install
-
-2. **Start LM Studio** and load a model
-
-3. **Set environment variables:**
-   ```bash
-   export LLM_PROVIDER=lm_studio
-   export LLM_BASE_URL=http://localhost:1234
-   export LLM_MODEL=your-model-name
-   ```
 
 ## 📚 Knowledge Base
 
-The knowledge base is pre-processed from the DGCA Passenger Charter and stored in:
-- `backend/rag/flyfair_rag_chunks.json`
-
-**DO NOT** attempt to re-process or modify this file. It is the single source of truth.
+- Source: **DGCA Passenger Charter – Government of India**
+- Content:
+  - Flight delays
+  - Flight cancellations
+  - Denied boarding (overbooking)
+  - Refunds
+  - Baggage issues
+  - Special assistance & disabilities
+- Data is:
+  - OCR-extracted
+  - Cleaned
+  - Manually chunked by legal scenario
+  - Stored in `flyfair_rag_chunks.json`
 
 ## 🎨 Branding
 
