@@ -1,0 +1,329 @@
+[
+    {
+      "chunk_id": "delay_meals_2hrs",
+      "text": "If a domestic flight within India is delayed beyond two hours and the passenger has checked in on time, the airline shall provide free meals and refreshments in relation to the waiting time.",
+      "metadata": {
+        "category": "Flight Delay",
+        "source": "DGCA Passenger Charter",
+        "page": "4"
+      }
+    },
+    {
+      "chunk_id": "delay_alternate_6hrs",
+      "text": "If a domestic flight within India is delayed beyond six hours and the passenger has checked in on time, the passenger shall be offered an alternate flight or a full refund as per DGCA norms.",
+      "metadata": {
+        "category": "Flight Delay",
+        "source": "DGCA Passenger Charter",
+        "page": "4"
+      }
+    },
+    {
+      "chunk_id": "delay_overnight_accommodation",
+      "text": "If a domestic flight within India is delayed overnight after the passenger has checked in, the airline shall provide hotel accommodation and transfers free of charge.",
+      "metadata": {
+        "category": "Flight Delay",
+        "source": "DGCA Passenger Charter",
+        "page": "4"
+      }
+    },
+    {
+      "chunk_id": "cancellation_less_24hrs",
+      "text": "If a domestic flight within India is cancelled and the passenger is informed less than 24 hours before the scheduled departure, and no suitable alternate flight is provided, the passenger shall be entitled to compensation or an alternate flight along with a full refund as applicable under DGCA regulations.",
+      "metadata": {
+        "category": "Flight Cancellation",
+        "source": "DGCA Passenger Charter",
+        "page": "5"
+      }
+    },
+    {
+      "chunk_id": "cancellation_refund_airline",
+      "text": "When a domestic flight within India is cancelled by the airline, the passenger shall be entitled to a full refund of the ticket amount.",
+      "metadata": {
+        "category": "Refund",
+        "source": "DGCA Passenger Charter",
+        "page": "6"
+      }
+    },
+    {
+      "chunk_id": "denied_boarding_no_volunteer",
+      "text": "If a passenger holding a valid ticket for a domestic flight within India is denied boarding due to overbooking without their consent after completing check-in, the passenger shall be entitled to compensation, an alternate flight or a refund as per DGCA regulations.",
+      "metadata": {
+        "category": "Denied Boarding",
+        "source": "DGCA Passenger Charter",
+        "page": "7"
+      }
+    },
+    {
+      "chunk_id": "baggage_delay",
+      "text": "If checked-in baggage is delayed on arrival for a domestic flight within India, the airline shall provide necessary assistance and compensation as prescribed under DGCA norms.",
+      "metadata": {
+        "category": "Baggage",
+        "source": "DGCA Passenger Charter",
+        "page": "8"
+      }
+    },
+    {
+      "chunk_id": "baggage_loss",
+      "text": "If checked-in baggage is declared lost on a domestic flight within India, the passenger shall be compensated for the loss of baggage in accordance with DGCA prescribed limits.",
+      "metadata": {
+        "category": "Baggage",
+        "source": "DGCA Passenger Charter",
+        "page": "8"
+      }
+    },
+    {
+      "chunk_id": "assistance_pwd",
+      "text": "For a domestic flight within India, passengers with disabilities or reduced mobility shall be provided necessary assistance by the airline at no additional cost, including support during boarding, seating, disembarkation and transit.",
+      "metadata": {
+        "category": "Special Assistance",
+        "source": "DGCA Passenger Charter",
+        "page": "9"
+      }
+    },
+        {
+          "chunk_id": "delay_exception_weather_atc",
+          "text": "No compensation is payable if a domestic flight delay is caused due to extraordinary circumstances such as weather conditions, air traffic control restrictions, security risks, or other force majeure events beyond the airline’s control.",
+          "metadata": {
+            "category": "Flight Delay",
+            "source": "DGCA Passenger Charter",
+            "page": "4"
+          }
+        },
+        {
+          "chunk_id": "cancellation_notice_72hrs_plus",
+          "text": "If a domestic flight is cancelled and the passenger is informed at least seventy-two hours before the scheduled departure time, the airline is not liable to pay compensation.",
+          "metadata": {
+            "category": "Flight Cancellation",
+            "source": "DGCA Passenger Charter",
+            "page": "5"
+          }
+        },
+        {
+          "chunk_id": "cancellation_notice_24_72hrs",
+          "text": "If a domestic flight is cancelled and the passenger is informed between twenty-four and seventy-two hours before departure, compensation is not payable if the airline offers an alternate flight with acceptable timing as prescribed by DGCA.",
+          "metadata": {
+            "category": "Flight Cancellation",
+            "source": "DGCA Passenger Charter",
+            "page": "5"
+          }
+        },
+        {
+          "chunk_id": "cancellation_alternate_flight_conditions",
+          "text": "Compensation is not payable for flight cancellation if the airline offers an alternate flight that departs within a reasonable time window and arrives within the limits specified by DGCA regulations.",
+          "metadata": {
+            "category": "Flight Cancellation",
+            "source": "DGCA Passenger Charter",
+            "page": "5"
+          }
+        },
+        {
+          "chunk_id": "cancellation_force_majeure_exception",
+          "text": "No compensation is payable for a cancelled domestic flight if the cancellation occurs due to extraordinary circumstances such as weather conditions, air traffic control restrictions, security risks, or other force majeure events.",
+          "metadata": {
+            "category": "Flight Cancellation",
+            "source": "DGCA Passenger Charter",
+            "page": "5"
+          }
+        },
+        {
+          "chunk_id": "denied_boarding_volunteer",
+          "text": "If a passenger voluntarily agrees to give up their confirmed seat on a domestic flight due to overbooking, the airline shall provide benefits as mutually agreed between the passenger and the airline.",
+          "metadata": {
+            "category": "Denied Boarding",
+            "source": "DGCA Passenger Charter",
+            "page": "7"
+          }
+        },
+        {
+          "chunk_id": "denied_boarding_involuntary_short_delay",
+          "text": "If a passenger is involuntarily denied boarding on a domestic flight and the airline arranges an alternate flight resulting in a short arrival delay, compensation shall be paid as per DGCA prescribed slabs.",
+          "metadata": {
+            "category": "Denied Boarding",
+            "source": "DGCA Passenger Charter",
+            "page": "7"
+          }
+        },
+        {
+          "chunk_id": "denied_boarding_involuntary_medium_delay",
+          "text": "If involuntary denied boarding on a domestic flight results in a moderate arrival delay after re-routing, the passenger shall be compensated in accordance with DGCA compensation slabs.",
+          "metadata": {
+            "category": "Denied Boarding",
+            "source": "DGCA Passenger Charter",
+            "page": "7"
+          }
+        },
+        {
+          "chunk_id": "denied_boarding_involuntary_long_delay",
+          "text": "If involuntary denied boarding on a domestic flight results in a long arrival delay after re-routing, the passenger shall receive compensation at the highest slab as prescribed by DGCA.",
+          "metadata": {
+            "category": "Denied Boarding",
+            "source": "DGCA Passenger Charter",
+            "page": "7"
+          }
+        },
+        {
+          "chunk_id": "denied_boarding_refund_option",
+          "text": "A passenger denied boarding on a domestic flight may opt for a full refund instead of alternate travel, in which case the airline shall refund the ticket amount as per DGCA norms.",
+          "metadata": {
+            "category": "Denied Boarding",
+            "source": "DGCA Passenger Charter",
+            "page": "7"
+          }
+        },
+        {
+          "chunk_id": "refund_timeline_credit_card",
+          "text": "Refunds for domestic flight tickets paid by credit card shall be processed by the airline within the timeline prescribed by DGCA regulations.",
+          "metadata": {
+            "category": "Refund",
+            "source": "DGCA Passenger Charter",
+            "page": "6"
+          }
+        },
+        {
+          "chunk_id": "refund_timeline_debit_upi_wallet",
+          "text": "Refunds for domestic flight tickets paid via debit card, UPI, or digital wallets shall be processed within the time limits specified by DGCA.",
+          "metadata": {
+            "category": "Refund",
+            "source": "DGCA Passenger Charter",
+            "page": "6"
+          }
+        },
+        {
+          "chunk_id": "refund_partial_ticket_use",
+          "text": "If a domestic flight ticket is partially used, the passenger shall be entitled to a refund for the unused sector in accordance with DGCA refund rules.",
+          "metadata": {
+            "category": "Refund",
+            "source": "DGCA Passenger Charter",
+            "page": "6"
+          }
+        },
+        {
+          "chunk_id": "refund_ancillary_services",
+          "text": "Refunds for ancillary services such as seat selection, meals, or excess baggage shall be processed if the corresponding service is not provided due to airline action.",
+          "metadata": {
+            "category": "Refund",
+            "source": "DGCA Passenger Charter",
+            "page": "6"
+          }
+        },
+        {
+          "chunk_id": "baggage_delay_assistance",
+          "text": "In case of delayed checked-in baggage on a domestic flight, the airline shall provide necessary assistance to the passenger as per DGCA baggage handling norms.",
+          "metadata": {
+            "category": "Baggage",
+            "source": "DGCA Passenger Charter",
+            "page": "8"
+          }
+        },
+        {
+          "chunk_id": "baggage_loss_compensation_limit",
+          "text": "For loss of checked-in baggage on a domestic flight, the airline’s liability shall be limited to the compensation amount prescribed by DGCA regulations.",
+          "metadata": {
+            "category": "Baggage",
+            "source": "DGCA Passenger Charter",
+            "page": "8"
+          }
+        },
+        {
+          "chunk_id": "baggage_damage_reporting_timeline",
+          "text": "Damage to checked-in baggage on a domestic flight must be reported by the passenger within the timeline specified by DGCA to be eligible for compensation.",
+          "metadata": {
+            "category": "Baggage",
+            "source": "DGCA Passenger Charter",
+            "page": "8"
+          }
+        },
+        {
+          "chunk_id": "baggage_excluded_items",
+          "text": "Airlines are not liable for loss or damage to excluded items such as fragile or prohibited goods as specified under DGCA baggage rules.",
+          "metadata": {
+            "category": "Baggage",
+            "source": "DGCA Passenger Charter",
+            "page": "8"
+          }
+        },
+        {
+          "chunk_id": "assistance_elderly",
+          "text": "Elderly passengers on domestic flights are entitled to necessary assistance at the airport and during boarding and disembarkation as per DGCA guidelines.",
+          "metadata": {
+            "category": "Special Assistance",
+            "source": "DGCA Passenger Charter",
+            "page": "9"
+          }
+        },
+        {
+          "chunk_id": "assistance_pregnant_passenger",
+          "text": "Pregnant passengers travelling on domestic flights shall be provided assistance subject to airline policies and DGCA safety guidelines.",
+          "metadata": {
+            "category": "Special Assistance",
+            "source": "DGCA Passenger Charter",
+            "page": "9"
+          }
+        },
+        {
+          "chunk_id": "assistance_unaccompanied_minor",
+          "text": "Unaccompanied minors travelling on domestic flights shall be handled in accordance with airline procedures and DGCA safety requirements.",
+          "metadata": {
+            "category": "Special Assistance",
+            "source": "DGCA Passenger Charter",
+            "page": "9"
+          }
+        },
+        {
+          "chunk_id": "assistance_infant_travel",
+          "text": "Infants and children travelling on domestic flights shall be provided appropriate assistance and safety measures as per DGCA regulations.",
+          "metadata": {
+            "category": "Special Assistance",
+            "source": "DGCA Passenger Charter",
+            "page": "9"
+          }
+        },
+        {
+          "chunk_id": "class_downgrade_compensation",
+          "text": "If a passenger is involuntarily downgraded to a lower class on a domestic flight, the airline shall refund the fare difference as per DGCA rules.",
+          "metadata": {
+            "category": "Downgrade",
+            "source": "DGCA Passenger Charter",
+            "page": "10"
+          }
+        },
+        {
+          "chunk_id": "schedule_change_passenger_consent",
+          "text": "In case of a significant schedule change on a domestic flight, the airline must inform the passenger and obtain consent or offer suitable alternatives as per DGCA norms.",
+          "metadata": {
+            "category": "Schedule Change",
+            "source": "DGCA Passenger Charter",
+            "page": "10"
+          }
+        },
+        {
+          "chunk_id": "grievance_airline_response_timeline",
+          "text": "Airlines must acknowledge and respond to passenger grievances related to domestic flights within the timelines prescribed by DGCA.",
+          "metadata": {
+            "category": "Grievance",
+            "source": "DGCA Passenger Charter",
+            "page": "11"
+          }
+        },
+        {
+          "chunk_id": "grievance_aireswa_escalation",
+          "text": "If a passenger grievance is not resolved by the airline, the passenger may escalate the complaint through the AirSewa portal as per DGCA procedures.",
+          "metadata": {
+            "category": "Grievance",
+            "source": "DGCA Passenger Charter",
+            "page": "11"
+          }
+        },
+        {
+          "chunk_id": "grievance_dgca_escalation",
+          "text": "Passengers may escalate unresolved domestic flight grievances to DGCA in accordance with the escalation mechanism defined in the Passenger Charter.",
+          "metadata": {
+            "category": "Grievance",
+            "source": "DGCA Passenger Charter",
+            "page": "11"
+          }
+        }
+      
+  ]
+  
+  
