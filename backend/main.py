@@ -52,6 +52,12 @@ def get_rag_service() -> RAGService:
 def get_llm_service() -> Optional[LLMService]:
     """Get or create LLM service"""
     global llm_service
+    # Production path (Railway): RAG-only, no LLM calls at all.
+    # Set FLYFAIR_RAG_ONLY=false locally if you explicitly want LLM formatting.
+    rag_only = os.getenv("FLYFAIR_RAG_ONLY", "true").strip().lower() in ("1", "true", "yes", "y", "on")
+    if rag_only:
+        return None
+
     if llm_service is None:
         try:
             config = LLMConfig(
@@ -61,9 +67,6 @@ def get_llm_service() -> Optional[LLMService]:
                 timeout=float(os.getenv("LLM_TIMEOUT", "30.0"))
             )
             llm_service = LLMService(config)
-            # Test connection
-            llm_service.generate("Test", "Hello")
-            print("LLM service initialized successfully")
         except Exception as e:
             print(f"LLM service initialization failed: {e}")
             print("Continuing without LLM (will use direct formatting)")

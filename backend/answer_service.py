@@ -103,38 +103,27 @@ Source:
         """Format response directly from chunk without LLM"""
         text = chunk['text']
         metadata = chunk['metadata']
-        
-        # Extract scenario (usually the first part before conditions)
-        # Look for "If" to identify conditional scenarios
-        if 'if' in text.lower():
-            # Split on "if" to separate scenario from conditions
-            parts = text.split('if', 1)
-            if len(parts) > 1:
-                scenario = parts[0].strip()
-                conditions_text = 'if' + parts[1]
-            else:
-                scenario = text
-                conditions_text = text
+
+        # RAG-only formatting must use ONLY retrieved text (no added wording).
+        # Best-effort split: "If <conditions>, <rights>."
+        lower_text = text.lower()
+        sep = lower_text.find(", the ")
+        if sep == -1:
+            sep = lower_text.find(", passenger ")
+
+        if sep != -1:
+            conditions = text[:sep].strip()
+            rights = text[sep + 1 :].strip()
         else:
-            scenario = text
-            conditions_text = text
-        
-        # Extract conditions more carefully
-        conditions = []
-        if 'if' in conditions_text.lower():
-            # Extract the "if" clause
-            if_part = conditions_text.lower().split('if')[1].split(',')[0].strip()
-            if if_part:
-                conditions.append(if_part.capitalize())
-        
-        # Extract rights (usually after "shall" or "entitled")
-        rights = text
-        
+            conditions = text
+            rights = text
+
+        # Keep "Applicable Scenario" as verbatim chunk text for safety.
         response = f"""Applicable Scenario:
-{scenario}
+{text}
 
 Conditions:
-{', '.join(conditions) if conditions else 'As specified in the scenario'}
+{conditions}
 
 Passenger Rights:
 {rights}

@@ -76,8 +76,9 @@ class RAGService:
         k = min(top_k, len(self.chunks))
         distances, indices = self.index.search(query_embedding.astype('float32'), k)
         
-        # Convert distances to similarities (cosine similarity)
-        similarities = 1 - distances[0]
+        # Convert L2 distances on normalized vectors to cosine similarity.
+        # For unit-normalized vectors: ||a-b||^2 = 2 - 2*cos(a,b)  =>  cos = 1 - dist/2
+        similarities = 1 - (distances[0] / 2.0)
         
         # Filter by threshold and return chunks
         results = []

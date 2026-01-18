@@ -1,0 +1,28 @@
+# Ignore everything not needed for backend deploy image
+.git
+.github
+.cursor
+.vscode
+.idea
+.DS_Store
+
+# Frontend (deploy separately to Vercel)
+frontend/
+
+# Local virtualenvs / caches
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+.cache/
+
+# Node artifacts (if any at repo root)
+node_modules/
+.next/
+out/
+dist/
+
+# Logs
+*.log
+
