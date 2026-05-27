@@ -1,0 +1,16 @@
+Window 1 : Backend
+
+cd d:\FlyFair_Chatbot-main\FlyFair_Chatbot-main\backend
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+python main.py
+
+
+Window 2 : Frontend
+
+cd d:\FlyFair_Chatbot-main\FlyFair_Chatbot-main\frontend
+.env.local
+NEXT_PUBLIC_API_URL=http://localhost:8000
+npm install
+npm run dev

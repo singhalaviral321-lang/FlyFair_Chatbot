@@ -1,0 +1,162 @@
+[
+{
+    "id": "delay_meals_2hrs",
+    "category": "Flight Delay",
+    "scenario": "Domestic flight delayed beyond two hours",
+    "conditions": [
+      "Domestic flight within India",
+      "Passenger checked in on time",
+      "Delay exceeds two hours"
+    ],
+    "passenger_rights": [
+      "Airline shall provide free meals and refreshments in relation to the waiting time"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "4"
+    }
+  },
+  {
+    "id": "delay_alternate_6hrs",
+    "category": "Flight Delay",
+    "scenario": "Domestic flight delayed beyond six hours",
+    "conditions": [
+      "Domestic flight within India",
+      "Passenger checked in on time",
+      "Delay exceeds six hours"
+    ],
+    "passenger_rights": [
+      "Passenger shall be offered an alternate flight or a full refund, as per DGCA norms"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "4"
+    }
+  },
+  {
+    "id": "delay_overnight_accommodation",
+    "category": "Flight Delay",
+    "scenario": "Domestic flight delayed overnight",
+    "conditions": [
+      "Domestic flight within India",
+      "Passenger checked in on time",
+      "Delay extends overnight"
+    ],
+    "passenger_rights": [
+      "Airline shall provide hotel accommodation and transfers free of charge"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "4"
+    }
+  },
+  {
+    "id": "cancellation_less_24hrs",
+    "category": "Flight Cancellation",
+    "scenario": "Flight cancelled with less than 24 hours notice",
+    "conditions": [
+      "Domestic flight within India",
+      "Cancellation informed less than 24 hours before departure",
+      "No suitable alternate flight provided"
+    ],
+    "passenger_rights": [
+      "Passenger shall be entitled to compensation or an alternate flight, along with a full refund as applicable"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "5"
+    }
+  },
+  {
+    "id": "cancellation_refund_airline",
+    "category": "Refund",
+    "scenario": "Refund when flight is cancelled by airline",
+    "conditions": [
+      "Domestic flight within India",
+      "Flight cancelled by airline"
+    ],
+    "passenger_rights": [
+      "Passenger shall be entitled to a full refund of the ticket amount"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "6"
+    }
+  },
+  {
+    "id": "denied_boarding_no_volunteer",
+    "category": "Denied Boarding",
+    "scenario": "Denied boarding due to overbooking without passenger consent",
+    "conditions": [
+      "Domestic flight within India",
+      "Passenger has valid ticket and check-in completed",
+      "Boarding denied due to overbooking"
+    ],
+    "passenger_rights": [
+      "Passenger shall be entitled to compensation, alternate flight or refund as per DGCA regulations"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "7"
+    }
+  },
+  {
+    "id": "baggage_delay",
+    "category": "Baggage",
+    "scenario": "Delayed checked-in baggage",
+    "conditions": [
+      "Domestic flight within India",
+      "Checked-in baggage delayed on arrival"
+    ],
+    "passenger_rights": [
+      "Airline shall provide necessary assistance and compensation as per DGCA norms"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "8"
+    }
+  },
+  {
+    "id": "baggage_loss",
+    "category": "Baggage",
+    "scenario": "Loss of checked-in baggage",
+    "conditions": [
+      "Domestic flight within India",
+      "Checked-in baggage declared lost"
+    ],
+    "passenger_rights": [
+      "Passenger shall be compensated for loss of baggage as per DGCA prescribed limits"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "8"
+    }
+  },
+  {
+    "id": "assistance_pwd",
+    "category": "Special Assistance",
+    "scenario": "Rights of persons with disability or reduced mobility",
+    "conditions": [
+      "Domestic flight within India",
+      "Passenger has disability or reduced mobility"
+    ],
+    "passenger_rights": [
+      "Airline shall provide necessary assistance at no additional cost, including boarding, seating, and disembarkation support"
+    ],
+    "exceptions": [],
+    "source": {
+      "document": "DGCA Passenger Charter",
+      "page": "9"
+    }
+  }
+  
+]
+  
